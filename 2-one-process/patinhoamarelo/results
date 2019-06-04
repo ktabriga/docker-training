@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt">
+  	<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+        <meta name="description" content="O app mais fominha da internê" />
+        <meta name="keywords" content="aiqfome, ai q fome, ai que fome, ifood, pedidos ja, pedidosjá, devorando, delivery much, almoço, a la carte, burger, batata frita, batata suíça, balcão, pedido, comida, pedido comida, delivery, comida delivery, cardapio, cardápio, sushi, sashimi, temaki, online, restaurante, virtual, app, app delivery, light, internet, web, casa, delivery, compra, comprar, pizza, asiática, chinesa, japonesa, italiana, comer, cozinha, disk, disque, entrega, domicilio, tele-entrega, teleentrega, tele entrega, esfiha, esfiharia, fast food, gastronomia, burger, burguer, hamburger, hotdog, janta, jantar, lanche, lanches, menu, marmitex, marmita, pizzaria, pizzarias, pastel, pastelaria, refeição, restaurante, restaurantes, refeição, rodízio, sabor, sabores, taxa, telefone, vegetariano, vegetariana, venda, restaurante" />
+        <meta property="og:description" content="O app mais fominha da internê" />
+      	<meta property="og:url" content="https://aiqfome.com" />
+        <meta property="og:title" content="aiqfome - Happy Delivery" />
+
+        <meta name="theme-color" content="#7B1FA2">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SMART BANNER APPLE -->
+        <meta name="apple-itunes-app" content="app-id=891143703">
+        <!-- SMART BANNER ANDROID -->
+        <meta name="smartbanner:title" content="aiqfome">
+        <meta name="smartbanner:author" content="aiqfome Team">
+        <meta name="smartbanner:price" content="Free">
+        <meta name="smartbanner:price-suffix-google" content=" - Google Play">
+        <meta name="smartbanner:icon-google" content="http://aiqfome.com/webroot/img/smartbanner.png">
+        <meta name="smartbanner:button" content="Baixar">
+        <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=com.vanuatu.aiqfome">
+        <meta name="smartbanner:enabled-platforms" content="android">
+
+      	<link id="favicon" rel="shortcut icon" href="/img/favicon/invert.png" type="image/png" />
+		    <link rel="canonical" href="https://aiqfome.com" />
+
+      	<title>
+          aiqfome - Happy Delivery      	</title>
+      	
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css?1547726092"/>
+	<link rel="stylesheet" href="/css/dist/site.min.css?1557229816"/>
+	<link rel="stylesheet" href="/css/dist/smartbanner.min.css?1554808343"/>
+
+	<script src="/js/jquery/min/jquery.js?1547725803"></script>
+	<script src="/js/loader/loader.js?1547725803"></script>
+	<script src="/js/bootstrap/bootstrap.min.js?1547725792"></script>
+	<script src="/js/sinch/sinch.min.js?1547725941"></script>
+	<script src="/js/uaparser/min/uaparser.js?1547726000"></script>
+	<script src="/js/dist/smartbanner.min.js?1554808363"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8995823-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-8995823-4');
+        </script>
+  	</head>
+
+  	<body>
+    	<div class="wrapper">
+      		<div class="device-test hidden-lg hidden-md"></div>
+            <form id="loader" class="loader z-index-ticket loader no-scroll reloading-completo">
+                <canvas id="pizzaLoader" class="canvas-loader"></canvas>
+            </form>
+            <script type="text/javascript">
+            let pizza = new Pizza('pizzaLoader')
+
+            ;(function update() {
+                requestAnimationFrame(update)
+                pizza.update()
+
+            }())
+            $(".site-completo").addClass("no-scroll");
+            </script>
+      		<div class="header z-index high clearfix">
+		<button id="headerLogado" class="btn btn-secondary-reverse btn-header open-modal-trigger font-main auto-size medium-large-font medium-weight-font tiny-margin-top" hidden>oi, pessoa</button>
+		<button id="headerButton" class="btn btn-secondary-reverse btn-header open-modal-trigger font-main auto-size medium-large-font medium-weight-font tiny-margin-top" data-target="#modal-login" data-toggle="modal" hidden>entrar/cadastrar</button>
+
+		<div id="titulo-aiqfome-div" class="no-padding-left logo-aiqfome" style="position: -webkit-sticky">
+			<a href="/">
+				<img id="titulo-aiqfome" src="/images/logo-aiqfome-original.png" alt="Logo Aiqfome" class="computador">
+			</a>
+		</div>
+
+		<button style="display:none;" id="voltarButton" class="btn btn-secondary-reverse btn-header open-modal-trigger font-main auto-size medium-weight-font tiny-margin-top move-right" onclick="minhasCoisas.irPraPraca();">ir pra praça</button>
+
+    </div>
+<div style="height:60px"></div>
+
+<nav id="sidebar" class="active">
+	<div id="side-facebook-div" class="modal-div" style="display: none;">
+		<input type="button" class="side-btn-facebook font-main small-font" style="padding-left: 30px; background-color: white;" onclick="methods.facebookConectar()" value="conectar com o Facebook" />
+	</div>
+    <ul class="list-unstyled components">
+        <li id="lateral-infos" class="large-margin-top margin-left grid-menu-lateral list-menu">
+            <div class="box-img-inside"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/side-menu/minhas_infos.png" alt="ícone de carteira de identidade"></div>
+            <a href="/minhas-coisas#minhas-infos" class="font-main text-left small-padding-top white-text ">minhas infos</a>
+        </li>
+        <li id="lateral-pedidos" class="large-margin-top margin-left list-menu grid-menu-lateral">
+            <div class="box-img-inside"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/side-menu/pedidos.png" alt="ícone de garfo e faca"></div>
+            <a href="/minhas-coisas#pedidos" class="font-main text-left  small-padding-top white-text ">pedidos</a>
+        </li>
+        <li id="lateral-enderecos" class="large-margin-top margin-left list-menu grid-menu-lateral">
+            <div class="box-img-inside"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/side-menu/enderecos.png" alt="ícone de poltrona"></div>
+            <a href="/minhas-coisas#enderecos" class="font-main text-left  small-padding-top white-text ">endereços</a>
+        </li>
+		<li id="lateral-cupons" class="large-margin-top margin-left list-menu grid-menu-lateral">
+			<div class="box-img-inside"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/side-menu/cupons.png" alt="ícone de cupom com estrela"></div>
+			<a href="/minhas-coisas#cupons" class="font-main text-left  small-padding-top white-text ">cupons</a>
+		</li>
+        <li class="large-margin-top margin-left margin-right">
+			<button class="btn btn-block btn-header no-margin-left font-main fill-button medium-weight-font" onclick="methods.logout()">DESLOGAR</button>
+        </li>
+    </ul>
+</nav>
+
+<div id="dismiss" class="overlay"></div>
+	        	        <div class="container first-row text-center">
+	<div class="col-lg-12 image-fill">
+		<div class="row medium-margin-percent-top">
+			<div class="col-lg-3 col-md-1 col-sm-0"></div>
+			<div class="col-lg-6 col-md-10 col-sm-12">
+				<p class="font-main no-margin regular-font white-text large-font descricao">oie, bem vindo à fominhaland, eu serei seu guia pelo mundo do delivery. aqui à sua direita vemos a vila burguer, ali à sua esquerda temos o parque das pizzas, e logo à frente fica o maravilhoso banco de cupons. divirta-se! \o/</p>
+			</div>
+			<div class="col-lg-3 col-md-1 col-sm-0"></div>
+		</div>
+		<div class="row medium-margin-percent-top">
+			<div class="col-lg-3 col-md-1 col-sm-0"></div>
+			<div class="col-lg-6 col-md-10 col-sm-12">
+				<button class="btn btn-primary-reverse font-main fill-button regular-font uppercase" hidden id="buttonMinhaCidade">eu to em </button>
+			</div>
+			<div class="col-lg-3 col-md-1 col-sm-0"></div>
+		</div>
+		<div class="row small-margin-percent-top small-margin-percent-bottom">
+			<div class="col-lg-3 col-md-1 col-sm-0"></div>
+			<div class="col-lg-6 col-md-10 col-sm-12">
+				<button id="buttonSelecionarCidade" class="btn btn-primary-reverse font-main fill-button regular-font margin-bottom" onclick="location.href = '/cidades'">ESCOLHER OUTRA CIDADE</button>
+			</div>
+			<div class="col-lg-3 col-md-1 col-sm-0"></div>
+		</div>
+	</div>
+
+	<div class="col-lg-12 medium-margin-percent-top">
+		<p class="font-main no-margin purple-text xlarge-font medium-weight-font">como que faz, hein, aiq? 🤔</p>
+		<p class="font-main no-margin regular-font dark-grey-text large-font">é assim ó:</p>
+		<div class="row small-margin-percent-top">
+			<div class="col-lg-4 col-md-4 ">
+				<div class=" font-main text-center ">
+					<div class="box-medium-image-inside">
+						<img class="img-medium" alt="ícone de mão tocando tela de celular" src="/img/icons/home/touch-screen.png">
+					</div>
+					<p class="blue-text no-margin semi-bold-font no-margin large-font">quer comer o que?</p>
+					<p class="grey-text no-margin regular-font">você escolhe o rango e o restaurante</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<div class=" font-main text-center ">
+					<div class="box-medium-image-inside">
+						<img class="img-medium" alt="ícone de motoboy" src="/img/icons/home/delivery.png">
+					</div>
+					<p class="blue-text no-margin semi-bold-font no-margin large-font">pediu, pagou, entregou</p>
+					<p class="grey-text regular-font">dá pra pagar pelo app ou na hora da entrega</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 ">
+				<div class=" font-main text-center ">
+					<div class="box-medium-image-inside">
+						<img class="img-medium" alt="ícone de cloche semi aberta com pão por baixo" src="/img/icons/home/dish.png">
+					</div>
+					<p class="blue-text no-margin semi-bold-font no-margin large-font">momento de glória</p>
+					<p class="grey-text no-margin regular-font">depois é só avaliar pra dar aquele feedback pro restaurante</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-12 medium-margin-percent-top">
+		<p class="font-main no-margin purple-text xlarge-font medium-weight-font">o que tem de bom por aqui?</p>
+		<div class="row small-margin-percent-top">
+			<div class=" col-md-1 col-sm-0"></div>
+			<div class="col-lg-12 col-md-10 col-sm-12 ">
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/pizza' >pizza</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/acai' >açaí</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/lanche' >lanches</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/yakisoba' >yakisoba</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/marmitex' >marmitex</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/esfiha' >esfiha</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/japonesa' >japonês</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/chinesa' >comida chinesa</a>
+				<a class="btn font-main btn-categoria btn-culinarias regular-font" href='/delivery/hamburguer' >hambúrguer</a>
+			</div>
+			<div class=" col-md-1 col-sm-0"></div>
+		</div>
+	</div>
+
+	<div class="col-lg-12 medium-margin-percent-top xlarge-margin-bottom">
+		<p class="font-main no-margin purple-text xlarge-font medium-weight-font">bem blogueirinhos</p>
+		<p class="font-main no-margin medium-margin-bottom regular-font dark-grey-text large-font ">dá uma olhada no que a gente tá pensando</p>
+		<div class="row small-margin-percent-top">
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<a class='font-main grey-text original semi-bold-font medium-large-font' target="_blank" id="noticia0" rel="noreferrer">
+
+						<img class='img-blog' id="imgNoticia0" alt="ilustrando a notícia do blog"/>
+						<p class=" margin-auto text-center medium-weight-font texto-blog" id="tituloNoticia0"></p>
+
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<a class='font-main grey-text original semi-bold-font medium-large-font' target="_blank" id="noticia1" rel="noreferrer">
+
+						<img class='img-blog' id="imgNoticia1" alt="ilustrando a notícia do blog"/>
+						<p class="margin-auto text-center medium-weight-font texto-blog" id="tituloNoticia1"></p>
+
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<a class='font-main grey-text original semi-bold-font medium-large-font' target="_blank" id="noticia2" rel="noreferrer">
+
+						<img class='img-blog' id="imgNoticia2" alt="ilustrando a notícia do blog"/>
+						<p class=" margin-auto text-center medium-weight-font texto-blog" id="tituloNoticia2"></p>
+
+				</a>
+			</div>
+		</div>
+		<div class="row small-margin-percent-top ">
+			<div class="col-lg-4 col-md-4  medium-margin-bottom">
+				<a class='font-main grey-text original semi-bold-font medium-large-font' target="_blank" id="noticia3" rel="noreferrer">
+
+						<img class='img-blog ' id="imgNoticia3" alt="ilustrando a notícia do blog"/>
+						<p class=" margin-auto text-center medium-weight-font texto-blog" id="tituloNoticia3"></p>
+
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<a class='font-main grey-text original semi-bold-font medium-large-font' target="_blank" id="noticia4" rel="noreferrer">
+
+						<img class='img-blog ' id="imgNoticia4" alt="ilustrando a notícia do blog"/>
+						<p class=" margin-auto text-center medium-weight-font texto-blog" id="tituloNoticia4"></p>
+
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<a class='font-main grey-text original semi-bold-font medium-large-font' target="_blank" id="noticia5" rel="noreferrer">
+
+						<img class='img-blog ' id="imgNoticia5" alt="ilustrando a notícia do blog"/>
+						<p class=" margin-auto text-center medium-weight-font texto-blog" id="tituloNoticia5"></p>
+
+				</a>
+			</div>
+		</div>
+	</div>
+<div class="desktop grid-anuncio-aplicativo row">
+	<div class="grid-anuncio-aplicativo-fundo1 purple-background"></div>
+	<div class="grid-anuncio-aplicativo-celular no-margin no-padding">
+		<img class="img-celular" src="/img/icons/home/mockup.png" alt="Tela de celular com o app aiqfome">
+	</div>
+	<div class="grid-anuncio-aplicativo-texto no-margin no-padding div-texto-celular purple-background">
+		<div class="texto-celular">
+			<p class="font-main no-margin no-marginbold-font xlarge-font white-text">leve a gente no bolso!</p>
+			<p class="font-main no-margin light-font large-font white-text texto-anuncio-aplicativo">pra você que é todo moderninho, <br/> também estamos na ponta do dedo!</p>
+			<p class="font-main no-margin  light-font large-font white-text">baixe o app no seu celular ou tablet.</p>
+		</div>
+	</div>
+	<div class="grid-anuncio-aplicativo-botoes no-margin no-padding purple-background">
+		<div class="text-center botoes-celular display-botoes-anuncio-aplicativo">
+			<a class="margin-auto tamanho-botao-anuncio-app " href="https://itunes.apple.com/br/app/aiqfome/id891143703" rel="noreferrer" target="_blank"><p class="icon-store"><img class="img-celular small-margin-vertical icon-celular" src="/img/icons/home/apple.png" alt="Logo da apple"></p></a>
+			<a class="margin-auto tamanho-botao-anuncio-app " href="https://play.google.com/store/apps/details?id=com.vanuatu.aiqfome" rel="noreferrer" target="_blank"><p class="icon-store"><img class="img-celular small-margin-vertical icon-celular" src="/img/icons/home/android.png" alt="Logo do android"></p></a>
+		</div>
+	</div>
+	<div class="grid-anuncio-aplicativo-fundo2 purple-background"></div>
+</div>
+	<!--<div class="col-lg-12 medium-margin-percent-top purple-background">
+	</div>-->
+
+	<div class="col-lg-12 medium-margin-percent-top">
+		<p class="font-main no-margin medium-margin-bottom purple-text xlarge-font medium-weight-font">vem pra cá, a gente aumenta a água do feijão :)</p>
+		<div class="row small-margin-percent-top">
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<div class=" font-main text-center ">
+					<div class="box-medium-image-inside inline">
+						<a href="https://biz.aiqfome.com" target="_blank" rel="noreferrer">
+							<img class="img-retrato" alt="pizza de chocolate com massa roxa" src="/img/home/restaurant.png">
+						</a>
+					</div>
+					<p class="blue-text no-margin light-font large-font small-margin-vertical semi-bold-font">cadastre seu restaurante</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+
+					<div class=" font-main text-center ">
+						<div class="box-medium-image-inside inline">
+							<a href="http://licenciamento.aiqfome.com/" target="_blank" rel="noreferrer">
+							<img class="img-retrato" alt="mala roxa cheia de livros do réri póti dentro" src="/img/home/travel.jpg">
+						</a>
+						</div>
+						<p class="blue-text no-margin light-font large-font small-margin-vertical semi-bold-font">leve a gente pra sua cidade</p>
+					</div>
+
+			</div>
+			<div class="col-lg-4 col-md-4 medium-margin-bottom">
+				<div class=" font-main text-center ">
+					<div class="box-medium-image-inside inline">
+						<a href="http://sobre.aiqfome.com/seja-um-fomer" target="_blank" rel="noreferrer">
+							<img class="img-retrato" alt="pessoal do aiqfome trabalhando a todo vapor" src="/img/home/work-here.png">
+						</a>
+					</div>
+					<p class="blue-text no-margin light-font large-font small-margin-vertical semi-bold-font">vem trampar com a gente</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12 medium-margin-percent-top"></div>
+</div>
+
+
+<script type="application/ld+json">
+	{
+    	"@context": "http://schema.org",
+    	"@type": "Organization",
+    	"name": "aiqfome",
+    	"url": "https://aiqfome.com",
+    	"logo": "https://aiqfome.com/images/logo-aiqfome-original.png",
+    	"sameAs": ["https://www.facebook.com/aiqfome/", "https://www.instagram.com/aiqfome/", "https://www.twitter.com/aiqfome/", "https://frigideira.aiqfome.com/", "https://open.spotify.com/user/aiqfome?si=1gQ9xKAPSwCAGJ3JSzoL6w", "https://www.youtube.com/channel/UCPWSV3NJbrdJpvHKzG7WCSg"]
+	}
+</script>
+
+
+	<script src="/js/pages/home.js?1556024390"></script>
+    	</div>
+    	<footer class="col-xs-12 no-padding footer" role="contentinfo">
+	<div class="footer">
+		<div class="row">
+			<div class="font-main white-text black-font col-lg-4 col-md-12 text-center">
+				<div class="texto-footer padding-vertical semi-bold-font">VAMOS SER MIGOS!</div>
+				<button class="btn btn-circle no-padding tiny-margin" onclick="window.open('https://www.instagram.com/aiqfome/', '_blank')"><img class="img-margin" src="/img/icons/media/ic_instagram_new.png" alt="logo do instagram"/></button>
+				<button class="btn btn-circle no-padding tiny-margin" onclick="window.open('https://www.facebook.com/aiqfome/', '_blank')"><img class="img-margin" src="/img/icons/media/ic_facebook_new.png" alt="logo do facebook"/></button>
+				<button class="btn btn-circle no-padding tiny-margin" onclick="window.open('https://www.twitter.com/aiqfome/', '_blank')"><img class="img-margin" src="/img/icons/media/ic_twitter_new.png" alt="logo do twitter"/></button>
+				<button class="btn btn-circle no-padding tiny-margin" onclick="window.open('https://frigideira.aiqfome.com/', '_blank')"><img class="img-margin" src="/img/icons/media/wordpress.png" alt="logo do wordpress"/></button>
+				<button class="btn btn-circle no-padding tiny-margin" onclick="window.open('https://open.spotify.com/user/aiqfome?si=1gQ9xKAPSwCAGJ3JSzoL6w', '_blank')"><img class="img-margin" src="/img/icons/media/spotify.png" alt="logo do spotify"/></button>
+				<button class="btn btn-circle no-padding tiny-margin" onclick="window.open('https://www.youtube.com/c/aiqfomeapp', '_blank')"><img class="img-margin" src="/img/icons/media/ic_youtube_new.png" alt="logo do youtube"/></button>
+			</div>
+			<div class="font-main white-text black-font col-lg-1 col-md-4 text-center">
+				<div class="texto-footer padding-vertical semi-bold-font">NÓIS</div>
+				<a href="http://sobre.aiqfome.com/" target="_blank" rel="noreferrer"><p class="links-footer white-text light-font lowercase">quem?</p></a>
+				<a href="https://aiqfome.com/faqs" target="_blank" rel="noreferrer"><p class="links-footer white-text light-font lowercase">ajuda</p></a>
+			</div>
+			<div class="font-main white-text black-font col-lg-4 col-md-4 text-center">
+				<div class="texto-footer padding-vertical semi-bold-font">NEGÓCIOS</div>
+				<a href="https://biz.aiqfome.com" target="_blank" rel="noreferrer"><p class="links-footer white-text light-font lowercase">coloque o seu restaurante no aiqfome</p></a>
+				<a href="http://licenciamento.aiqfome.com/" target="_blank" rel="noreferrer"><p class="links-footer white-text light-font lowercase">leve o aiqfome para sua cidade</p></a>
+			</div>
+			<div class="font-main white-text black-font col-lg-1 col-md-4 text-center">
+				<div class="texto-footer padding-vertical semi-bold-font">LEGAL</div>
+				<a href="https://aiqfome.com/termos" target="_blank" rel="noreferrer"><p class="links-footer white-text light-font lowercase">termos de uso</p></a>
+			</div>
+			<div class="col-lg-2 col-md-12 text-center no-padding">
+				<div class="texto-footer grey-text no-padding-top semi-bold-font">aiqfome</div>
+				<img src="/img/icons/logo-pequena.png" alt="logo do aiqfome" class="fantasminha">
+			</div>
+			<div class="col-lg-12 col-md-12 text-center font-main white-text black-font no-padding-top">
+				<p class="links-footer white-text light-font lowercase xsmall-font no-margin-top">também tamo nos smarts >
+					<a href="https://aiqfome.onelink.me/UjyW/rodapesite" rel="noreferrer" target="_blank" class="white-text medium-weight-font">ios</a>
+					<a href="https://aiqfome.onelink.me/UjyW/rodapesite" rel="noreferrer" target="_blank" class="white-text medium-weight-font">> android</a>
+					 - feito com ♥ em maringá, pr
+				</p>
+				<p class="links-footer white-text light-font lowercase xsmall-font">aiqfome.com © 2007-2018 aiqfome LTDA . CNPJ: 09.186.786/0001-58</p>
+			</div>
+		</div>
+	</div>
+</footer>
+    	<div class="black-wall"></div>
+      	<div class="modal modal-novo fade "  id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modalInfos" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-item modal-style">
+        <div class="modal-header no-border move-right display-block z-index-ticket">
+      			<button type="button" class="font-x btn-hidden dark-purple-text move-right" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      		<div class="modal-body text-center">
+       			<form name="form" class="col-12 no-padding" novalidate>
+       				<div class="modal-div no-padding-top">
+	           			<div>
+		           			<img class="form-icon" src="/img/icons/minhas-coisas/mail.svg" alt="ícone de cartinha">
+		            		<input type="email" id="login" class="input-login grey-placeholder" placeholder="email" name="login" required>
+		        		</div>
+		    		</div>
+		    		<div class="modal-div no-padding-top ">
+		        		<div>
+		           			<img class="form-icon small-padding-bottom" src="/img/icons/minhas-coisas/senha.svg" alt="ícone de cadeado">
+		            		<input type="password" id="senha" class="input-login grey-placeholder" placeholder="senha" name="senha" required>
+		        		</div>
+		    		</div>
+		    		<div>
+	           			<div class="padding-btns-modal-login">
+	           				<input id="btn-login" type="button" class="btn btn-primary-reverse font-main" onclick="methods.login()" value="ENTRAR" />
+	           			</div>
+	           			<div class="padding-btns-modal-login">
+	           				<input type="button" class="btn btn-secondary font-main" onclick="methods.openCadastro()" value="CADASTRE-SE" />
+	           			</div>
+                        <div class="padding-btns-modal-login">
+                            <!-- <div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+	           				<input type="button" class="btn-facebook font-main small-medium-font" style="padding-left: 30px;" onclick="methods.facebookLogin()" value="CONTINUAR COM O FACEBOOK" />
+	           			</div>
+	           			<div class="a modal-div no-padding-top">
+	           				<a class="font-main semi-bold-font dark-purple-text cursor-pointer" onclick="methods.startEsqueciMinhaSenha()">putz, não lembro minha senha :(</a>
+	           			</div>
+	        		</div>
+       			</form>
+      		</div>
+    	</div>
+  	</div>
+</div>
+
+<script type="text/javascript">
+    var input = document.getElementById("senha");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("btn-login").click();
+        }
+    });
+</script>
+
+
+	<script src="/js/modal/login.js?1556633092"></script>
+      	<div class="modal modal-novo fade"  id="modal-cadastro" tabindex="-1" role="dialog" aria-labelledby="modal-cadastro" aria-hidden="true">
+  <div class="modal-dialog modal-cadastro-tam modal-dialog-centered" role="document">
+    <div class="modal-content modal-style">
+        <div class="modal-header no-border move-right display-block z-index-ticket">
+      	<button type="button" class="font-x btn-hidden dark-purple-text move-right" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body height-fill-avaliable overflow-y-auto no-padding-top" style="max-height: 480px;">
+       	<form class="padding-form-cadastro" name="form" novalidate id="formCadastro" autocomplete="off">
+       		<div class="grid-nome-cadastro xlarge-margin-bottom">
+                <div class=" grid-area-imagem"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/foto.svg" alt="ícone de pessoa tipo perfil"></div>
+	       		<div class="padding-cadastro text-right grid-area-nome text-left padding-right-modal-cadastro"><input type="text" id="nome" class="input-login input-medium font-small grey-placeholder" placeholder="nome" name="nome" required></div>
+	       		<div class="padding-cadastro grid-area-sobrenome text-left padding-left-cadastro"><input type="text" id="sobrenome" class="input-login input-medium font-small grey-placeholder" placeholder="sobrenome" name="sobrenome" required></div>
+			</div>
+			<div class="row xlarge-margin-bottom">
+	       		<div class="no-padding col-6 text-right">
+		           	<div class="grid-campos-cadastro ">
+		           		<div class=" grid-area-imagem"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/users.svg" alt="ícone de busto de um homem e de uma mulher"></div>
+		           		<div class="grid-area-campo" style="padding-left: 15px;"><input type="button" class="btn btn-form font-main font-small btn-lg no-padding grey-placeholder" value="donzela" id="buttonCadastroDonzela" onclick="methods.toggleRapazDonzela('Donzela', 'Rapaz')" /></div>
+			        </div>
+			    </div>
+	       		<div class="no-padding col-6 text-left">
+                    <div style="padding-left: 15%;">
+                        <div class="grid-area-campo medium-padding-right"><input type="button" class="btn btn-form font-small font-main btn-lg no-padding" value="rapaz" id="buttonCadastroRapaz" onclick="methods.toggleRapazDonzela('Rapaz', 'Donzela')" /></div>
+                    </div>
+			    </div>
+			</div>
+       		<div class="row">
+	       		<div class="no-padding col-lg-6 col-md-6 col-sm-12 col-12 xlarge-margin-bottom text-right">
+                    <div class="grid-campos-cadastro">
+                        <div class=" grid-area-imagem"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/nascimento.svg" alt="ícone de bebê"></div>
+                        <div class="grid-area-campo padding-cadastro "><input type="text" id="nascimento" class="input-login input-medium font-small grey-text grey-placeholder" placeholder="data de nascimento" name="nascimento" required></div>
+                    </div>
+			    </div>
+                <div class="no-padding col-lg-6 col-md-6 col-sm-12 col-12 xlarge-margin-bottom text-left no-padding-left">
+                    <div class="grid-campos-cadastro">
+                        <div class=" grid-area-imagem"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/phone.svg" alt="ícone de telefone"></div>
+                        <div class="grid-area-campo padding-cadastro "><input type="text" id="telefone" class="input-login input-medium font-small grey-placeholder" placeholder="telefone" name="celular" required></div>
+                    </div>
+                </div>
+			</div>
+       		<div class="row">
+	       		<div id="div-email" class="no-padding col-lg-6 col-md-6 col-sm-12 col-12 text-right xlarge-margin-bottom">
+                    <div class="grid-campos-cadastro">
+                        <div class=" grid-area-imagem"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/mail.svg" alt="ícone de cartinha"></div>
+                        <div class="grid-area-campo padding-cadastro "><input type="email" id="email" class="input-login input-medium font-small grey-placeholder" placeholder="email" name="email" onfocusout="methods.checkEmail()" onkeypress="emailValido = false;" required></div>
+                    </div>
+			    </div>
+	       		<div id="div-senha" class="col-lg-6 col-md-6 col-sm-12 col-12 text-left no-padding xlarge-margin-bottom">
+                    <div class="grid-campos-cadastro">
+                        <div class="grid-area-imagem"><img class="form-icon-cadastro" src="/img/icons/minhas-coisas/senha.svg" alt="ícone de cadeado"></div>
+                        <div class="grid-area-campo padding-cadastro"><input type="password" id="senhaCadastro" class="input-login input-medium font-small grey-placeholder" placeholder="senha" name="senha" required></div>
+                    </div>
+			    </div>
+			</div>
+		    <div class="text-center xlarge-margin-bottom">
+		    	<p class="font-main  medium-weight-font large-font">algum amigo te indicou?</p>
+		    	<div class="grid-campos-cadastro margin-bottom">
+                    <div class="grid-area-imagem">
+                        <img class="form-icon-cadastro" src="/img/icons/minhas-coisas/indicacao.png" alt="imagem de duas pessoas se cumprimentando">
+                    </div>
+                    <div class="grid-area-campo padding-cadastro">
+                        <input type="text" id="codigoIndique" class="input-login input-medium font-small text-center grey-placeholder width-100" placeholder="põe o código dele aqui pra ganhar cupom!" name="codigo_indicacao" required>
+                    </div>
+			    </div>
+			    <p class="font-main  xsmall-font">ao clicar em cadastrar você está se levantando, colocando a mão direita no peito e fazendo a seguinte promessa: <br/> aiqfome, concordo com seus <a href="http://aiqfome.com/termos">termos de uso.</a></p>
+	           	<div class="padding-cadastro">
+	           		<input id="btnCadastro" type="button" class="btn btn-primary-reverse btn-lg font-main grey-placeholder" onclick="methods.cadastrar()" value="PRONTIM" />
+	           	</div>
+	        </div>
+       	</form>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="modal fade" id="modal-avaliar" tabindex="-1" role="dialog">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content avaliacao-modal">
+      		<div class="modal-header display-inline-block no-border move-right no-padding-bottom">
+        		<button type="button" class="font-x btn-hidden dark-purple-text move-right" data-dismiss="modal" aria-label="Close">
+        	  		<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      		<div class="modal-body no-padding-top">
+        		<p class="font-main text-center purple-text semi-bold-font large-font">como foi seu pedido?</p>
+        		<div class="row">
+        			<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+        			<div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3 no-padding-left">
+        				<img src="/img/restaurante/restaurante.png" class="logo-restaurante-avaliar" id="logoRestauranteAvaliacao">
+        			</div>
+        			<div class="col-sm-8 col-7 font-main dark-purple-text medium-weight-font large-font small-margin-percent-top"><span id="nomeRestauranteAvaliacao">Rock and Honda</span> pediu pra perguntar... </div>
+        			<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+        		</div>
+        		        			<div class="row medium-margin-percent-top" id="avaliacao0">
+        				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+        				<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 medium-margin-percent-top">
+		            		<p class="font-main dark-purple-text medium-weight-font xsmall-margin-bottom">o que achou da comida?</p>
+		            		<div class="row">
+		            			<div class="col-8 no-padding">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star1av0" onmouseover="methods.pintaEstrelas(0, 1)" onmouseout="methods.voltaEstrelas(0)" onclick="methods.novaAvaliacao(0, 1)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star2av0" onmouseover="methods.pintaEstrelas(0, 2)" onmouseout="methods.voltaEstrelas(0)" onclick="methods.novaAvaliacao(0, 2)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star3av0" onmouseover="methods.pintaEstrelas(0, 3)" onmouseout="methods.voltaEstrelas(0)" onclick="methods.novaAvaliacao(0, 3)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star4av0" onmouseover="methods.pintaEstrelas(0, 4)" onmouseout="methods.voltaEstrelas(0)" onclick="methods.novaAvaliacao(0, 4)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star5av0" onmouseover="methods.pintaEstrelas(0, 5)" onmouseout="methods.voltaEstrelas(0)" onclick="methods.novaAvaliacao(0, 5)" alt="ícone de estrela" class="a estrela">
+				            	</div>
+				            	<div class="col-4 text-right">
+									<span class="font-main purple-text medium-weight-font" id="nota0">-/5.0</span>
+				            	</div>
+		            		</div>
+        					<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+            			</div>
+            		</div>
+            	        			<div class="row medium-margin-percent-top" id="avaliacao1">
+        				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+        				<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 medium-margin-percent-top">
+		            		<p class="font-main dark-purple-text medium-weight-font xsmall-margin-bottom">chegou no tempo certo? <span class="regular-font grey-text" id="tempoPreparoAvaliacao">(60 - 90min)</span></p>
+		            		<div class="row">
+		            			<div class="col-8 no-padding">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star1av1" onmouseover="methods.pintaEstrelas(1, 1)" onmouseout="methods.voltaEstrelas(1)" onclick="methods.novaAvaliacao(1, 1)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star2av1" onmouseover="methods.pintaEstrelas(1, 2)" onmouseout="methods.voltaEstrelas(1)" onclick="methods.novaAvaliacao(1, 2)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star3av1" onmouseover="methods.pintaEstrelas(1, 3)" onmouseout="methods.voltaEstrelas(1)" onclick="methods.novaAvaliacao(1, 3)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star4av1" onmouseover="methods.pintaEstrelas(1, 4)" onmouseout="methods.voltaEstrelas(1)" onclick="methods.novaAvaliacao(1, 4)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star5av1" onmouseover="methods.pintaEstrelas(1, 5)" onmouseout="methods.voltaEstrelas(1)" onclick="methods.novaAvaliacao(1, 5)" alt="ícone de estrela" class="a estrela">
+				            	</div>
+				            	<div class="col-4 text-right">
+									<span class="font-main purple-text medium-weight-font" id="nota1">-/5.0</span>
+				            	</div>
+		            		</div>
+        					<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+            			</div>
+            		</div>
+            	        			<div class="row medium-margin-percent-top" id="avaliacao2">
+        				<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+        				<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 medium-margin-percent-top">
+		            		<p class="font-main dark-purple-text medium-weight-font xsmall-margin-bottom">veio tudo certinho?</p>
+		            		<div class="row">
+		            			<div class="col-8 no-padding">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star1av2" onmouseover="methods.pintaEstrelas(2, 1)" onmouseout="methods.voltaEstrelas(2)" onclick="methods.novaAvaliacao(2, 1)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star2av2" onmouseover="methods.pintaEstrelas(2, 2)" onmouseout="methods.voltaEstrelas(2)" onclick="methods.novaAvaliacao(2, 2)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star3av2" onmouseover="methods.pintaEstrelas(2, 3)" onmouseout="methods.voltaEstrelas(2)" onclick="methods.novaAvaliacao(2, 3)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star4av2" onmouseover="methods.pintaEstrelas(2, 4)" onmouseout="methods.voltaEstrelas(2)" onclick="methods.novaAvaliacao(2, 4)" alt="ícone de estrela" class="a estrela">
+				            		<img src="/img/icons/minhas-coisas/pedido/estrelavazia.svg" id="star5av2" onmouseover="methods.pintaEstrelas(2, 5)" onmouseout="methods.voltaEstrelas(2)" onclick="methods.novaAvaliacao(2, 5)" alt="ícone de estrela" class="a estrela">
+				            	</div>
+				            	<div class="col-4 text-right">
+									<span class="font-main purple-text medium-weight-font" id="nota2">-/5.0</span>
+				            	</div>
+		            		</div>
+        					<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+            			</div>
+            		</div>
+            		           	<div class="row medium-margin-percent-top">
+	        		<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+	        		<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 medium-margin-percent-top">
+			           	<p class="font-main dark-purple-text medium-weight-font">por que você deu essa nota?</p>
+			           	<textarea class="comentario-avaliar grey-placeholder font-main width-95" placeholder="ex: a entrega foi bem rápida, vou pedir lá de novo!" id="comentarioAvaliacao"></textarea>
+			        </div>
+	        		<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+	            </div>
+	            <div class="row medium-margin-percent-top">
+	        		<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+	       			<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 medium-margin-percent-bottom " >
+	  					<button id="buttonEnviarAvaliacao" class="btn btn-primary-reverse font-main width-95 acinzentado" onclick="methods.saveAvaliacao()" disabled style="opacity: 1;">Avaliar</button>
+	  				</div>
+	        		<div class="col-xl-1 col-lg-1 col-md-1 col-sm-auto col-auto"></div>
+	            </div>
+      		</div>
+    	</div>
+  	</div>
+</div>
+        <div class="modal fade" id="modal-alertify" tabindex="-1" role="dialog">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content" id="alertify-content">
+      		<div class="modal-alertify-body text-center">
+      			<div id="modalMessage" class="font-main original">Tem certeza que quer apagar sua fota?</div>
+      			<div class="row" id="divPrompt">
+      				<div class="col-lg-12">
+      					<input type="text" id="promptValue" class="font-main purple-text medium-weight-font large-font validator-input"/>
+      				</div>
+      			</div>
+		    	<div class="row">
+	           		<div class="col-12 modal-div no-padding-left" id="divButtonYesNo">
+	       				<button type="button" class="btn small-btn btn-primary-reverse font-main move-right center-tiny-screen" id="buttonYes" data-dismiss="modal">tenho sim</button>
+	           			<button type="button" class="btn small-btn btn-secondary font-main" id="buttonNo" data-dismiss="modal" onclick="$('.container').removeClass('reloading');">nãããããããããão</button>
+	           		</div>
+	           		<div class="col-lg-12 modal-div" id="divButtonSingle">
+	       				<button type="button" class="btn small-btn btn-primary-reverse font-main" id="buttonSingle" data-dismiss="modal">tenho sim</button>
+	           		</div>
+	       		</div>
+      		</div>
+    	</div>
+  	</div>
+</div>
+
+
+	<script src="/js/alertify/toastr.min.js?1547736019"></script>
+	<script src="/js/alertify/alertify.js?1547736017"></script>
+<!-- ?= $this->Html->css(['toastr.min.css']); ? -->
+  	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7121f45ad3","applicationID":"151590936","transactionName":"ZwEDYRZTDRYCBUdeWl5LNEcNHRQAARRcWEEfDQ9RAUpNFQsW","queueTime":0,"applicationTime":48,"atts":"S0YAF15JHhg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+  	<!-- <script src="//v2.zopim.com/?3X0aMxyWkNA3w45byEFFNmS1Su1XGzho" charset="utf-8" type="text/javascript"></script> -->
+    
+	<script src="/js/jquery/jquery.mask.js?1547725798"></script>
+ <!-- Jquery Mask -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d672f518-67a0-4d84-9c81-028d5f23a241"> </script>
+    <script type="application/ld+json">
+	{
+    	"@context": "http://schema.org",
+    	"@type": "BreadcrumbList",
+      "itemListElement": [{ "@type": "ListItem", "position": 1, "item":{ "url": "https://aiqfome.com", "id":"https://aiqfome.com", "name": "aiqfome - happy delivery"} }]	}
+	</script>
+
+    <script> <!-- facebook login -->
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1642007899402644',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v3.2'
+        });
+
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/pt_BR/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+</html>
